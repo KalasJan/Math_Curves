@@ -63,8 +63,8 @@ y_integrated, x_integrated = fresnel(t_array)
 To render arbitrarily rotated conics, a 2D rotation matrix is vectorized and applied across the state space:
 
 ```python
-rotation_matrix = np.array([[np.cos(theta), -np.sin(theta)],
-                            [np.sin(theta),  np.cos(theta)]])
+rotation_matrix = np.array([[1,np.sin(p)],
+                         [np.cos(p),1]])
 rotated_coordinates = rotation_matrix @ original_state_vector
 ```
 
@@ -78,12 +78,6 @@ To run these simulations, clone the repository and install the standard scientif
 git clone https://github.com
 cd mathematical-curves
 pip install numpy matplotlib scipy
-```
-
-Run any script directly using Python (e.g., the Brachistochrone simulation):
-
-```bash
-python Brachistochrone_tautochrone_Brachistochrona_Tautochrona.py
 ```
 
 ## License
